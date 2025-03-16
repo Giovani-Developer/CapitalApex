@@ -1,39 +1,75 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const link1 = document.getElementById("link1"); //Home
+    const link2 = document.getElementById("link2"); //caracteristicas
+    const link3 = document.getElementById("link3"); //Planos
+    const link4 = document.getElementById("link4"); //Sobre
 
-function scrollToElement(elementSelector, instance = 0) {
-    // Select all elements that match the given selector
-    const elements = document.querySelectorAll(elementSelector);
-    // Check if there are elements matching the selector and if the requested instance exists
-    if (elements.length > instance) {
-        // Scroll to the specified instance of the element
-        elements[instance].scrollIntoView({ behavior: 'smooth' });
+    // Configurar os eventos de clique para os links
+    if (link1) {
+        link1.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
-}
+    
+    if (link2) {
+        link2.addEventListener('click', (e) => {
+            e.preventDefault();
+            const header = document.querySelector('.header');  
+            if (header){  
+            header.scrollIntoView({ behavior: 'smooth'});
+            }
+        });
+    }
+    
+    if (link3) {
+        link3.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pricing = document.querySelector('.pricing');
+            if (pricing) {
+                pricing.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 
-const link1 = document.getElementById("link1");
-const link2 = document.getElementById("link2");
-const link3 = document.getElementById("link3");
-
-link1.addEventListener('click', () => {
-    scrollToElement('.header');
-});
-
-link2.addEventListener('click', () => {
-    // Scroll to the second element with "header" class
-    scrollToElement('.header', 1);
-});
-
-link3.addEventListener('click', () => {
-    scrollToElement('.column');
-});
-
-const sections = document.querySelectorAll('.section');
-
-const scrollTrigger = () => {
-    sections.forEach(section => {
-        if (section.getBoundingClientRect().top < window.innerHeight * 0.85) {
-            section.classList.add('visible')
+    if (link4) {
+        link4.addEventListener('click', (e) => {
+            e.preventDefault();
+            const footer = document.querySelector('footer');
+            if (footer) {
+                footer.scrollIntoView({ behavior: 'smooth'});
+            }
+        })
+    }
+    // Função para rolar até o elemento
+    function scrollToElement(elementSelector, instance = 0) {
+        const elements = document.querySelectorAll(elementSelector);
+        if (elements.length > instance) {
+            elements[instance].scrollIntoView({ behavior: 'smooth' });
         }
-    })
-};
+    }
 
-window.add.addEventListener('scroll', scrollTrigger);
+    // Scroll trigger para adicionar a classe "visible"
+    const sections = document.querySelectorAll('.section');
+    const scrollTrigger = () => {
+        sections.forEach(section => {
+            if (section.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                section.classList.add('visible');
+            }
+        });
+    };
+
+    // Configurar o menu mobile
+    const menuBtn = document.getElementById("menubtn");
+    const menuLinks = document.getElementById("menu-link");
+    
+    if (menuBtn && menuLinks) {
+        menuBtn.addEventListener("click", function() {
+            menuLinks.classList.toggle("active");
+        });
+    }
+    
+    // Executar scrollTrigger ao carregar e durante a rolagem
+    window.addEventListener('scroll', scrollTrigger);
+    scrollTrigger();
+});
