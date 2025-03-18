@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (Telegram) {
         Telegram.addEventListener('click', (e) => {
             e.preventDefault();
-            window.open('https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/support%40bull-ex.com', '_blank');
+            window.open('https://t.me/+WIttYMMfJEVmMWMx', '_blank');
         });
     }
 
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (suporte) {
         suporte.addEventListener('click', (e) => {
             e.preventDefault();
-            window.open('', '_blank');
+            window.open('https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/support%40bull-ex.com', '_blank');
         })
     }
     // Função para rolar até o elemento
