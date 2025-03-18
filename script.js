@@ -39,6 +39,41 @@ document.addEventListener('DOMContentLoaded', function() {
             if (footer) {
                 footer.scrollIntoView({ behavior: 'smooth'});
             }
+        });
+    }
+
+    if (Telegram) {
+        Telegram.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/support%40bull-ex.com', '_blank');
+        });
+    }
+
+    if (bullex) {
+        bullex.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://trade.bull-ex.com/pt/register?aff=746737&aff_model=revenue&afftrack=', '_blank');
+        });
+    }
+
+    if (youtube) {
+        youtube.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://www.youtube.com/@CapitalApexob', '_blank');
+    });
+}
+
+    if (instagram) {
+        instagram.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://www.instagram.com/capitalapexob/?utm_source=ig_web_button_share_sheet', '_blank');
+        })
+    }
+
+    if (suporte) {
+        suporte.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('', '_blank');
         })
     }
     // Função para rolar até o elemento
@@ -66,8 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuBtn && menuLinks) {
         menuBtn.addEventListener("click", function() {
             menuLinks.classList.toggle("active");
-        });
-    }
+           
+            
+    
+    });};
     
     // Executar scrollTrigger ao carregar e durante a rolagem
     window.addEventListener('scroll', scrollTrigger);
