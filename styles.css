@@ -50,8 +50,8 @@ body {
 
 /* ===== NAVBAR ===== */
 .navbar {
-    position: fixed;
-    gap: 2rem;
+    position: fixed !important;
+    gap: 2rem;  
     top: 0;
     left: 0;
     width: 100%;
@@ -421,6 +421,14 @@ footer .column > a:hover {
     color: var(--text-light);
 }
 
+footer .column .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 350px;
+}
+
 .copyright {
     background-color: var(--primary-dark);
     max-width: 100%;
@@ -502,6 +510,11 @@ footer .column > a:hover {
 
     .menubtn {
         display: none !important;
+    }
+
+    footer .column .logo {
+        justify-content: left;
+        display: flex;
     }
 }
 

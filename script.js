@@ -3,12 +3,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const link2 = document.getElementById("link2"); //caracteristicas
     const link3 = document.getElementById("link3"); //Planos
     const link4 = document.getElementById("link4"); //Sobre
+    const Telegram = document.getElementById("Telegram");
+    const bullex = document.getElementById("bullex");
+    const youtube = document.getElementById("youtube");
+    const instagram = document.getElementById("instagram");
+    const suporte = document.getElementById("suporte");
+    
+    // Função para fechar o menu mobile
+    function closeMenu() {
+        const menuLinks = document.getElementById("menu-link");
+        if (menuLinks && menuLinks.classList.contains("active")) {
+            menuLinks.classList.remove("active");
+        }
+    }
 
     // Configurar os eventos de clique para os links
     if (link1) {
         link1.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            closeMenu(); // Fecha o menu após clicar
         });
     }
     
@@ -17,8 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const header = document.querySelector('.header');  
             if (header){  
-            header.scrollIntoView({ behavior: 'smooth'});
+                header.scrollIntoView({ behavior: 'smooth'});
             }
+            closeMenu(); // Fecha o menu após clicar
         });
     }
     
@@ -29,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (pricing) {
                 pricing.scrollIntoView({ behavior: 'smooth' });
             }
+            closeMenu(); // Fecha o menu após clicar
         });
     }
 
@@ -39,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (footer) {
                 footer.scrollIntoView({ behavior: 'smooth'});
             }
+            closeMenu(); // Fecha o menu após clicar
         });
     }
 
@@ -46,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         Telegram.addEventListener('click', (e) => {
             e.preventDefault();
             window.open('https://t.me/+WIttYMMfJEVmMWMx', '_blank');
+            closeMenu(); // Fecha o menu após clicar
         });
     }
 
@@ -53,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bullex.addEventListener('click', (e) => {
             e.preventDefault();
             window.open('https://trade.bull-ex.com/pt/register?aff=746737&aff_model=revenue&afftrack=', '_blank');
+            closeMenu(); // Fecha o menu após clicar
         });
     }
 
@@ -60,22 +79,26 @@ document.addEventListener('DOMContentLoaded', function() {
         youtube.addEventListener('click', (e) => {
             e.preventDefault();
             window.open('https://www.youtube.com/@CapitalApexob', '_blank');
-    });
-}
+            closeMenu(); // Fecha o menu após clicar
+        });
+    }
 
     if (instagram) {
         instagram.addEventListener('click', (e) => {
             e.preventDefault();
             window.open('https://www.instagram.com/capitalapexob/?utm_source=ig_web_button_share_sheet', '_blank');
-        })
+            closeMenu(); // Fecha o menu após clicar
+        });
     }
 
     if (suporte) {
         suporte.addEventListener('click', (e) => {
             e.preventDefault();
             window.open('https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/support%40bull-ex.com', '_blank');
-        })
+            closeMenu(); // Fecha o menu após clicar
+        });
     }
+    
     // Função para rolar até o elemento
     function scrollToElement(elementSelector, instance = 0) {
         const elements = document.querySelectorAll(elementSelector);
@@ -101,10 +124,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuBtn && menuLinks) {
         menuBtn.addEventListener("click", function() {
             menuLinks.classList.toggle("active");
-           
-            
-    
-    });};
+        });
+        
+        // Opcional: Fechar o menu ao clicar fora dele
+        document.addEventListener('click', function(e) {
+            if (menuLinks.classList.contains('active') && 
+                !menuLinks.contains(e.target) && 
+                e.target !== menuBtn && 
+                !menuBtn.contains(e.target)) {
+                menuLinks.classList.remove('active');
+            }
+        });
+    }
     
     // Executar scrollTrigger ao carregar e durante a rolagem
     window.addEventListener('scroll', scrollTrigger);
