@@ -429,6 +429,17 @@ footer .column .logo{
     width: 350px;
 }
 
+#Disclaimer {
+    color: #1f2855; 
+    font-weight: bold;
+
+}
+
+#disclaimer-text {
+    color: #172B4D;
+}
+
+
 .copyright {
     background-color: var(--primary-dark);
     max-width: 100%;
@@ -437,6 +448,12 @@ footer .column .logo{
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
     text-align: center;
+}
+
+.video {
+    width: 350px; /* Tamanho original mantido para dispositivos móveis */
+    max-width: 100%; /* Garante que o vídeo não ultrapasse o contêiner em telas pequenas */
+    height: auto; /* Mantém a proporção */
 }
 
 /* ===== RESPONSIVO ===== */
@@ -516,6 +533,13 @@ footer .column .logo{
         justify-content: left;
         display: flex;
     }
+
+    .video  {
+        width: 700px;
+
+    }
+    
+
 }
 
 @media only screen and (max-width: 480px) {
