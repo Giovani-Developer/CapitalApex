@@ -197,6 +197,24 @@ section .header {
     position: relative;
 }
 
+section .header_names {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin: 80px;
+    
+}
+
+section .header_image {
+    display: inline-block;
+    width: 350px;
+    border-radius: 10px;
+    margin: 60px;
+    
+}
+section #thiago {
+    width: 380px;
+}
+
 section .header:after {
     content: '';
     position: absolute;
