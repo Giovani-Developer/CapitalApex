@@ -209,10 +209,12 @@ section .header_image {
     width: 350px;
     border-radius: 10px;
     margin: 60px;
+    box-shadow: 0 4px 16px rgba(0, 0, 1, 1);
     
 }
 section #thiago {
     width: 380px;
+    box-shadow: 0 4px 16px rgba(0, 0, 1, 1);
 }
 
 section .header:after {
@@ -502,6 +504,8 @@ footer .column .logo{
     width: 350px; /* Tamanho original mantido para dispositivos móveis */
     max-width: 100%; /* Garante que o vídeo não ultrapasse o contêiner em telas pequenas */
     height: auto; /* Mantém a proporção */
+    box-shadow: 0 4px 16px rgba(0, 0, 1, 1);
+    border-radius: 10px;
 }
 
 /* ===== RESPONSIVO ===== */
