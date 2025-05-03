@@ -140,4 +140,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Executar scrollTrigger ao carregar e durante a rolagem
     window.addEventListener('scroll', scrollTrigger);
     scrollTrigger();
+
+    const toggleBtn = document.getElementById('toggle-theme');
+    const isDark = localStorage.getItem('theme') === 'dark';
+
+    if (isDark) document.body.classList.add('dark');
+
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme' , current);
+    })
+
+
+    
+    const toggleBtnMenu = document.getElementById('toggle-theme-menu');
+    const isDarkMenu = localStorage.getItem('theme') === 'dark';
+
+    if (isDarkMenu) document.body.classList.add('dark');
+
+    toggleBtnMenu.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme' , current);
+    })
+
+
 });
